@@ -1,0 +1,27 @@
+<%- include('./includes/head.ejs') %>
+
+<main>
+    <section class="container">
+        <h1>Register your contact</h1>
+
+        <form action="/contacts/register" class="form-horizontal" method="POST"> 
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+            <label class="col-md-4 control-label" for="textinput">Name</label>  
+            <input id="textinput" name="name" type="text" placeholder="Enter name here" class="form-control input-md" required=""> 
+            
+            <label class="col-md-4 control-label" for="surname">Surname</label>  
+            <input id="surname" name="surname" type="text" placeholder="Enter surname here" class="form-control input-md" required="">   
+            
+            <label class="col-md-4 control-label" for="email">E-mail</label>  
+            <input id="email" name="email" type="text" placeholder="Enter e-mail here" class="form-control input-md">      
+            
+            <label class="col-md-4 control-label" for="phone">Phone</label>  
+            <input id="phone" name="phone" type="text" placeholder="Enter name here" class="form-control input-md"> 
+            
+            <button>Send</button>
+        </form>
+    </section>
+</main>
+
+<%- include('./includes/footer.ejs') %>

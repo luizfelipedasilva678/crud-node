@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx nodemon main.js --ignore public --ignore frontend",
+    "start": "npx nodemon server.js --ignore public --ignore frontend",
     "dev": "webpack -w"
   },
   "keywords": [],
