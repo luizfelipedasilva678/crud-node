@@ -33,8 +33,6 @@ module.exports.deleteContact = function deleteContact(req, res) {
 }
 
 module.exports.editContact = function editContact(req, res) {
-    console.log(req.query.name);
-
     res.render("edit", {
         title: 'Edit Contact',
         id: req.query.id,
@@ -54,7 +52,7 @@ module.exports.getEditData = function getEditData(req, res) {
         phone: req.body.phone
     }
 
-    contactModel.updateContact(data.name, data);
+    contactModel.updateContact(data.id, data);
 
     res.redirect("/contacts");
 }

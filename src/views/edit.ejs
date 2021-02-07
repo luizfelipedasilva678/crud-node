@@ -4,7 +4,7 @@
     <section class="container">
         <h1>Edit your contact</h1>
 
-        <form action="/contacts/register"  method="POST"> 
+        <form action="/contacts/edit"  method="POST"> 
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             
             <input type="hidden" name="id" value="<%= id %>">

@@ -22,12 +22,12 @@ module.exports = class ContactModel {
     }
 
     updateContact(id, data) {
-        Model.findOneAndUpdate({_id: id}, {
+        Model.findByIdAndUpdate(id, {
             name: data.name,
             surname: data.surname,
             email: data.email,
             phone: data.phone
-        })
+        }, {new: true})
         .then(e => console.log(e));
     }
     
