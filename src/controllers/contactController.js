@@ -23,5 +23,11 @@ module.exports.getFormData = function getFormData(req,res) {
 
     contactModel.createContact(data);
 
-    res.send("Success");
+    res.redirect("/contacts");
+}
+
+module.exports.deleteContact = function deleteContact(req, res) {
+    contactModel.deleteContact(req.params.id);
+
+    res.redirect("/contacts");
 }

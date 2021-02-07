@@ -1,11 +1,11 @@
 require('dotenv').config();
 
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
-
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.CONNECTIONSTRING, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.CONNECTIONSTRING, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
     .then(() => {
         app.emit('pronto')
     })
@@ -23,6 +23,7 @@ const csrf = require('csurf');
 const {checkCsrfError, csrfGlobalMiddleWare} = require('./src/middleware/middleware');
 
 app.use(helmet());
+app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true}));
 app.use(express.static(path.resolve(__dirname, 'public')));
 

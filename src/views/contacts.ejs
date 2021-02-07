@@ -3,9 +3,6 @@
 <main>
     <section class="container">
         <h1>Your contacts</h1>
-        <form style="display:none;" action="" > 
-            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-        </form>
         
         <a href="/contacts/register">
             <button> Create contact </button>
@@ -24,12 +21,11 @@
             <tbody>
                 <% for(let contact of contractData) { %>
                     <tr>
-                        <td style="display:none"> <%= contact.id %> </td>
                         <td> <%= contact.name %> </td>
                         <td> <%= contact.surname %> </td>
                         <td> <%= contact.email %> </td>
                         <td> <%= contact.phone %> </td>
-                        <td> <img class="delete" src="/assets/images/trash.png"> <img class="edit" src="/assets/images/pencil.png"></td>
+                        <td> <a href="/contacts/delete/<%= contact.id %>" > <img class="delete" src="/assets/images/trash.png"> </a> <img class="edit" src="/assets/images/pencil.png"></td>
                     </tr>
                 <% } %>
             </tbody>

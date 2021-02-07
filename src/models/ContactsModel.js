@@ -24,9 +24,11 @@ module.exports = class ContactModel {
     updateContact() {
 
     }
-
-    deleteContact() {
-
+    
+    deleteContact(id) {
+        Model.findByIdAndRemove(id, (err) => {
+            console.log(err)
+        });
     }
 
     async findAllContacts() {
