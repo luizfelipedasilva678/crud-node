@@ -21,8 +21,14 @@ module.exports = class ContactModel {
         .then(e => console.log(e));
     }
 
-    updateContact() {
-
+    updateContact(id, data) {
+        Model.findOneAndUpdate({_id: id}, {
+            name: data.name,
+            surname: data.surname,
+            email: data.email,
+            phone: data.phone
+        })
+        .then(e => console.log(e));
     }
     
     deleteContact(id) {

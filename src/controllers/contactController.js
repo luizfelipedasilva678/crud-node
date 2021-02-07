@@ -31,3 +31,30 @@ module.exports.deleteContact = function deleteContact(req, res) {
 
     res.redirect("/contacts");
 }
+
+module.exports.editContact = function editContact(req, res) {
+    console.log(req.query.name);
+
+    res.render("edit", {
+        title: 'Edit Contact',
+        id: req.query.id,
+        name: req.query.name, 
+        surname: req.query.surname,
+        email: req.query.email,
+        phone: req.query.phone
+    })
+}
+
+module.exports.getEditData = function getEditData(req, res) {
+    let data = {
+        id: req.body.id,
+        name: req.body.name,
+        surname: req.body.surname,
+        email: req.body.email,
+        phone: req.body.phone
+    }
+
+    contactModel.updateContact(data.name, data);
+
+    res.redirect("/contacts");
+}

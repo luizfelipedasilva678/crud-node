@@ -25,13 +25,19 @@
                         <td> <%= contact.surname %> </td>
                         <td> <%= contact.email %> </td>
                         <td> <%= contact.phone %> </td>
-                        <td> <a href="/contacts/delete/<%= contact.id %>" > <img class="delete" src="/assets/images/trash.png"> </a> <img class="edit" src="/assets/images/pencil.png"></td>
+                        <td> 
+                            <a href="/contacts/delete/<%= contact.id %>" > 
+                                <img class="delete" src="/assets/images/trash.png"> 
+                            </a> 
+
+                            <a href="/contacts/edit?name=<%= contact.name %>&surname=<%= contact.surname %>&email=<%= contact.email %>&phone=<%= contact.phone %>&id=<%= contact.id %>"> 
+                                <img class="edit" src="/assets/images/pencil.png"> 
+                            </a> 
+                        </td>
                     </tr>
                 <% } %>
             </tbody>
         </table>
-
-
     </section>
 </main>
 
