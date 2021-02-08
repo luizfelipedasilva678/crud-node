@@ -20,7 +20,7 @@ const routes = require('./routes');
 const path = require('path');
 const helmet = require('helmet');
 const csrf = require('csurf');
-const {checkCsrfError, csrfGlobalMiddleWare} = require('./src/middleware/middleware');
+const {checkCsrfError, csrfGlobalMiddleWare, userName, messages} = require('./src/middleware/middleware');
 
 app.use(helmet());
 app.use(bodyParser.json());
@@ -47,6 +47,8 @@ app.set('view engine', 'ejs');
 app.use(csrf());
 app.use(checkCsrfError);
 app.use(csrfGlobalMiddleWare);
+app.use(userName);
+app.use(messages);
 app.use(routes);
 
 app.on('pronto', () => {

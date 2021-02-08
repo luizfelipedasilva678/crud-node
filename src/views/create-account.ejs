@@ -1,0 +1,24 @@
+<%- include('./includes/head.ejs') %>
+
+<main>
+    <section class="container">
+        <h1>Create your account</h1>
+
+        <form action="/user/create"  method="POST"> 
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+            <label for="name">Name</label>  
+            <input id="name" name="name" type="text" placeholder="Enter name here"> 
+
+            <label for="login">Login</label>  
+            <input id="login" name="login" type="text" placeholder="Enter login here"> 
+            
+            <label for="password">Password</label>  
+            <input id="password" name="password" type="password" placeholder="Enter password here" >   
+              
+            <button>Send</button>
+        </form>
+    </section>
+</main>
+
+<%- include('./includes/footer.ejs') %>
