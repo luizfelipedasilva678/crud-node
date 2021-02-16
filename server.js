@@ -49,6 +49,7 @@ app.use(checkCsrfError);
 app.use(csrfGlobalMiddleWare);
 app.use(userName);
 app.use(messages);
+
 app.use(routes);
 
 app.on('pronto', () => {

@@ -21,11 +21,17 @@ module.exports.loginUser = function loginUser (req, res) {
                     if(result) {
                         req.session.user = user.name;
                         res.redirect('/contacts');
+                    } else {
+                        req.flash('errors', 'There is erros in your password');
+                        res.redirect('/user/login');
                     }
                 });
-            } else {
-                req.flash('error', 'Your login incorrect');
-            }
+            } 
+        })
+        .catch(e => {
+            console.log(e);
+            req.flash('errors', 'There is erros in your login')
+            res.redirect('/user/login');
         });
 }
 

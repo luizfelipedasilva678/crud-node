@@ -17,12 +17,13 @@ module.exports.userName = (req, res, next) => {
 
 module.exports.isLogged = (req, res, next) => {
     if(!req.session.user) {
+        req.flash('errors','You need to login to access this page');
         res.redirect('/user/login');
     }
     next();
 }
 
 module.exports.messages = (req, res, next) => {
-    res.locals.myMessages = req.flash();
+   res.locals.errors = req.flash('errors');
    next();
 }

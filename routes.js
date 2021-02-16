@@ -8,7 +8,7 @@ const contactController  = require('./src/controllers/contactController');
 const userController = require('./src/controllers/userController');
 
 // Home
-route.get('/', isLogged ,homeController.renderHome);
+route.get('/', homeController.renderHome);
 
 // Contacts
 route.get('/contacts', isLogged ,contactController.render);
