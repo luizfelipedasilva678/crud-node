@@ -12,16 +12,16 @@
             <input type="hidden" name="id" value="<%= id %>">
             
             <label for="textinput">Name</label>  
-            <input id="textinput" name="name" type="text" placeholder="Enter name here"  value="<%= name %>"> 
+            <input id="textinput" name="name" type="text" placeholder="Enter name here"  value="<%= name %>" pattern="^[A-Za-z]+$" required> 
             
             <label for="surname">Surname</label>  
-            <input id="surname" name="surname" type="text" placeholder="Enter surname here" value="<%= surname %>">   
+            <input id="surname" name="surname" type="text" placeholder="Enter surname here" value="<%= surname %>" pattern="^[A-Za-z]+$" required>   
             
             <label  for="email">E-mail</label>  
-            <input id="email" name="email" type="text" placeholder="Enter e-mail here" value="<%= email %>">      
+            <input id="email" name="email" type="email" placeholder="Enter e-mail here" value="<%= email %>" required>      
             
             <label  for="phone">Phone</label>  
-            <input id="phone" name="phone" type="text" placeholder="Enter name here" value="<%= phone %>"> 
+            <input id="phone" name="phone" type="tel" placeholder="Enter name here" value="<%= phone %>" pattern="[0-9]{4}-[0-9]{4}" required> 
             
             <button>Send</button>
         </form>

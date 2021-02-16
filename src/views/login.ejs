@@ -12,10 +12,10 @@
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
 
             <label for="login">Login</label>  
-            <input id="login" name="login" type="text" placeholder="Enter login here"> 
+            <input id="login" name="login" type="text" placeholder="Enter login here" pattern="^[A-Za-z0-9]+$" required> 
             
             <label for="password">Password</label>  
-            <input id="password" name="password" type="password" placeholder="Enter password here" >  
+            <input id="password" name="password" type="password" placeholder="Enter password here" pattern="^[A-Za-z0-9]+$" required>  
             
             <button>Send</button>
         </form>
